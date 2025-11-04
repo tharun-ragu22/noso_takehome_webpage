@@ -1,0 +1,59 @@
+{
+    "transcriptData": [
+        { "speaker": "Customer", "text": "Hello.", "start": 12160, "end": 12480 },
+        { "speaker": "Technician", "text": "Hey, Luis. Got you all done. The reason that took so long is I. I just kind of also built all your equipment options when I was out there too.", "start": 12800, "end": 19360 },
+        { "speaker": "Customer", "text": "Okay, sure.", "start": 19360, "end": 20320 },
+        { "speaker": "Technician", "text": "I'd love to wrap up with you here.", "start": 20960, "end": 23360 },
+        { "speaker": "Customer", "text": "Of course, of course.", "start": 23360, "end": 24320 },
+        { "speaker": "Technician", "text": "Great. So, before you go, I wanted to quickly mention our Premium Maintenance Plan which covers all future diagnostics and parts for a low monthly fee. It's a great safety net.", "start": 25000, "end": 35000 },
+        { "speaker": "Customer", "text": "Hmm, a monthly fee? I'll have to think about that. Thank you for the offer.", "start": 35500, "end": 40000 },
+        { "speaker": "Technician", "text": "No problem, Luis. Thank you for being a valued customer and choosing our service today. Have a wonderful rest of your day!", "start": 40500, "end": 45000 }
+    ],
+    "highlights": [
+        {
+            "fragment": "Hey, Luis. Got you all done.",
+            "speaker": "Technician",
+            "id": "anno-intro-1",
+            "objective": "Introduction", 
+            "type": "Deficient Greeting (Informal)", 
+            "note": "I'm a jew The greeting is informal and fails to include a professional introduction of the technician or the company. While it establishes rapport, it misses the formal policy requirement.",
+            "colorClass": "text-red-600"
+        },
+        {
+            "fragment": "built all your equipment options",
+            "speaker": "Technician",
+            "id": "anno-diagnosis-2",
+            "objective": "Solution Explanation",
+            "type": "Vague Service Description",
+            "note": "The technician provides a vague description of extra work done ('built all your equipment options') without explaining the benefit to the customer.",
+            "colorClass": "text-orange-600"
+        },
+        {
+            "fragment": "I'd love to wrap up with you here.",
+            "speaker": "Technician",
+            "id": "anno-sales-3",
+            "objective": "Sales Insights",
+            "type": "Transitioning Past Cues",
+            "note": "The technician is moving to close the call quickly, potentially missing an opportunity to formally discuss the 'equipment options' mentioned earlier.",
+            "colorClass": "text-orange-600"
+        },
+        {
+            "fragment": "Premium Maintenance Plan which covers all future diagnostics and parts for a low monthly fee.",
+            "speaker": "Technician",
+            "id": "anno-plan-4",
+            "objective": "Maintenance Plan Offer",
+            "type": "Objective Met (Clear Offer)",
+            "note": "Successfully pitches the maintenance plan, clearly stating the benefits (coverage) and cost structure (low monthly fee).",
+            "colorClass": "text-green-600"
+        },
+        {
+            "fragment": "Thank you for being a valued customer and choosing our service today. Have a wonderful rest of your day!",
+            "speaker": "Technician",
+            "id": "anno-close-5",
+            "objective": "Closing & Thank You",
+            "type": "Courteous & Professional Close",
+            "note": "Excellent professional closing, affirming customer value and finishing courteously.",
+            "colorClass": "text-green-600"
+        }
+    ]
+}
