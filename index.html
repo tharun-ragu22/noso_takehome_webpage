@@ -74,11 +74,156 @@
 
     <header class="mb-8">
         <h1 class="text-3xl font-bold text-gray-800">Customer Service Call Analysis</h1>
-        <p class="text-gray-500">Analysis objectives: Introduction, Diagnosis, Solution, Upsell, Maintenance, Closing, Call Type, Sales Insights.</p>
+        <p class="text-gray-500">Call Type: Initial response to service call</p>
+        
+        <div class="p-4 sm:p-6 lg:p-8 overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col"
+                            class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider md:px-6">
+                            Objective
+                        </th>
+                        <th scope="col"
+                            class="px-3 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-20 md:px-6">
+                            Score
+                        </th>
+                        <th scope="col"
+                            class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider md:px-6">
+                            Notes
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+        
+                    <!-- Row: Introduction -->
+                    <tr>
+                        <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900 md:px-6">
+                            Introduction
+                        </td>
+                        <td class="px-3 py-4 whitespace-nowrap text-center text-sm font-bold md:px-6">
+                            <span
+                                class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                Bad
+                            </span>
+                        </td>
+                        <td class="px-3 py-4 text-sm text-gray-700 max-w-lg md:px-6">
+                            The greeting ("Hey, Luis.") was very informal and lacked a clear, professional introduction of the
+                            technician and the company. This was noted as a compliance miss.
+                        </td>
+                    </tr>
+        
+                    <!-- Row: Problem Diagnosis -->
+                    <tr>
+                        <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900 md:px-6">
+                            Problem Diagnosis
+                        </td>
+                        <td class="px-3 py-4 whitespace-nowrap text-center text-sm font-bold md:px-6">
+                            <span
+                                class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                Bad
+                            </span>
+                        </td>
+                        <td class="px-3 py-4 text-sm text-gray-700 max-w-lg md:px-6">
+                            The technician stated the work was "all done" at the outset, indicating the problem diagnosis and
+                            initial repair occurred <b>before</b> this recorded part of the conversation. Therefore, no active
+                            inquiry about the customer's issue was present during this interaction.
+                        </td>
+                    </tr>
+        
+                    <!-- Row: Solution Explanation -->
+                    <tr>
+                        <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900 md:px-6">
+                            Solution Explanation
+                        </td>
+                        <td class="px-3 py-4 whitespace-nowrap text-center text-sm font-bold md:px-6">
+                            <span
+                                class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                Good
+                            </span>
+                        </td>
+                        <td class="px-3 py-4 text-sm text-gray-700 max-w-lg md:px-6">
+                            The technician provided thorough and clear explanations of the temporary fix, new system options,
+                            detailed installation processes, permitting, and financing options. They also managed expectations
+                            well regarding heat pump performance.
+                        </td>
+                    </tr>
+        
+                    <!-- Row: Upsell Attempts -->
+                    <tr>
+                        <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900 md:px-6">
+                            Upsell Attempts
+                        </td>
+                        <td class="px-3 py-4 whitespace-nowrap text-center text-sm font-bold md:px-6">
+                            <span
+                                class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                Good
+                            </span>
+                        </td>
+                        <td class="px-3 py-4 text-sm text-gray-700 max-w-lg md:px-6">
+                            The technician was highly proactive and effective, immediately presenting equipment options
+                            post-repair, highlighting current system deficiencies, leveraging regulatory trends (gas
+                            phase-outs), and offering incentives (rebates, financing) to encourage an upgrade.
+                        </td>
+                    </tr>
+        
+                    <!-- Row: Maintenance Plan Offer -->
+                    <tr>
+                        <td class="td-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900 md:px-6">
+                            Maintenance Plan Offer
+                        </td>
+                        <td class="px-3 py-4 whitespace-nowrap text-center text-sm font-bold md:px-6">
+                            <span
+                                class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                Good
+                            </span>
+                        </td>
+                        <td class="px-3 py-4 text-sm text-gray-700 max-w-lg md:px-6">
+                            The technician clearly offered an extended warranty (matching manufacturer's) tied to enrollment in
+                            their maintenance program, explicitly stating it would provide "10 years parts and 10 year
+                            manufacturer warranty."
+                        </td>
+                    </tr>
+        
+                    <!-- Row: Closing & Thank You -->
+                    <tr>
+                        <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900 md:px-6">
+                            Closing & Thank You
+                        </td>
+                        <td class="px-3 py-4 whitespace-nowrap text-center text-sm font-bold md:px-6">
+                            <span
+                                class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                Good
+                            </span>
+                        </td>
+                        <td class="px-3 py-4 text-sm text-gray-700 max-w-lg md:px-6">
+                            The technician secured the payment for the service completed that day. The customer actually
+                            initiated to pay, meaning the technician made them feel comfortable with the service provided.
+                        </td>
+                    </tr>
+        
+                    <!-- Row: Sales Insights -->
+                    <tr>
+                        <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900 md:px-6">
+                            Sales Insights
+                        </td>
+                        <td class="px-3 py-4 whitespace-nowrap text-center text-sm font-bold md:px-6">
+                            <span
+                                class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                Mid
+                            </span>
+                        </td>
+                        <td class="px-3 py-4 text-sm text-gray-700 max-w-lg md:px-6">
+                            Strong sales acumen was shown through rapport building, financing options, and credibility building.
+                            However, attempting to take an external call during the pitch was a notable miss.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </header>
 
     <div class="md:grid md:grid-cols-3 gap-8">
-        
         <!-- Transcript Column (2/3 width on desktop) -->
         <div id="transcript-container" class="md:col-span-2 mb-8 md:mb-0">
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Call Transcript</h2>
@@ -87,7 +232,6 @@
                 <p class="text-gray-500 italic p-4 bg-white rounded-lg">Loading transcript...</p>
             </div>
         </div>
-
         <!-- Annotation Sidebar (1/3 width on desktop) -->
         <div id="sidebar-container" class="md:col-span-1">
             <div id="annotation-sidebar" class="bg-white p-6 rounded-lg shadow-xl border border-gray-200 h-full md:sticky md:top-8 md:h-[calc(100vh-4rem)]">
@@ -1832,30 +1976,12 @@
                     "colorClass": "text-green-600"
                 },
                 {
-                    "fragment": "And let me go ahead and get the $1,000 for today. 1,900. So do you need a Visa or MasterCard?",
-                    "speaker": "Technician",
-                    "id": "anno-103",
-                    "objective": "Closing & Thank You",
-                    "type": "Direct Payment Request for Repair",
-                    "note": "Directly asks for payment for today's repair, despite the customer's earlier statement about not making a decision today and the technician's offer to waive it with a replacement commitment. This is a potential compliance and customer experience miss.",
-                    "colorClass": "text-red-600"
-                },
-                {
                     "fragment": "Always important.",
                     "speaker": "Technician",
                     "id": "anno-104",
                     "objective": "Sales Insights",
                     "type": "Rapport Building",
                     "note": "A brief, light comment while the customer is looking for their card, maintaining connection.",
-                    "colorClass": "text-green-600"
-                },
-                {
-                    "fragment": "Great.",
-                    "speaker": "Technician",
-                    "id": "anno-105",
-                    "objective": "Closing & Thank You",
-                    "type": "Acknowledging Payment Readiness",
-                    "note": "A concise acknowledgement as the customer presents payment, serving as a final closing action.",
                     "colorClass": "text-green-600"
                 },
             ]
@@ -1869,14 +1995,10 @@
         const annotationNote = document.getElementById('annotation-note');
         const closeBtn = document.getElementById('close-btn');
 
-        // Maps all highlights by their ID for quick lookup
         const annotationsMap = annotationsData.highlights.reduce((map, item) => {
             map[item.id] = item;
             return map;
         }, {});
-
-
-        // --- RENDERING LOGIC ---
 
         function renderTranscript() {
             let html = '';
@@ -1913,7 +2035,6 @@
             attachHighlightListeners(); // Attach listeners after rendering
         }
 
-        // Helper function to escape special characters in text for RegExp creation
         function escapeRegExp(string) {
             return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
         }
@@ -1925,11 +2046,8 @@
             const data = annotationsMap[id];
             if (!data) return;
 
-            // 1. Update content
             annotationType.textContent = `${data.objective} — ${data.type}`;
             annotationNote.textContent = data.note;
-
-            // 2. Apply color coding based on type (using the class defined in data)
             annotationType.classList.remove('text-red-600', 'text-green-600', 'text-blue-600', 'text-orange-600');
             annotationType.classList.add(data.colorClass);
 
