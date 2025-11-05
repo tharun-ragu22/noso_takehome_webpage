@@ -4,20 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Call Analysis Transcript</title>
-    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom font */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f7f9fb;
         }
-        /* Custom style for the clickable highlights */
         .highlight-span {
-            /* Background color for the highlight - a subtle yellow */
             background-color: #fce38a;
-            /* Underline to denote interactivity, similar to web links */
             text-decoration: underline;
             text-decoration-color: #f3d04e;
             text-decoration-thickness: 2px;
@@ -25,9 +20,9 @@
             cursor: pointer;
             transition: background-color 0.2s;
             border-radius: 4px;
-            padding: 2px 4px; /* Add slight padding around highlighted text */
-            margin: -2px 0; /* Adjust margin to prevent layout shift */
-            display: inline; /* Keep it inline */
+            padding: 2px 4px;
+            margin: -2px 0;
+            display: inline;
         }
         .highlight-span:hover {
             background-color: #f8c32d;
@@ -41,7 +36,7 @@
             color: #059669; /* Emerald green */
             font-weight: 600;
         }
-        /* Style for the container of the transcript lines */
+        
         .transcript-line {
             margin-bottom: 1.5rem;
             padding: 1rem;
@@ -224,7 +219,7 @@
     </header>
 
     <div class="md:grid md:grid-cols-3 gap-8">
-        <!-- Transcript Column (2/3 width on desktop) -->
+
         <div id="transcript-container" class="md:col-span-2 mb-8 md:mb-0">
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Call Transcript</h2>
             <!-- Dynamic transcript will be inserted here -->
@@ -232,7 +227,7 @@
                 <p class="text-gray-500 italic p-4 bg-white rounded-lg">Loading transcript...</p>
             </div>
         </div>
-        <!-- Annotation Sidebar (1/3 width on desktop) -->
+
         <div id="sidebar-container" class="md:col-span-1">
             <div id="annotation-sidebar" class="bg-white p-6 rounded-lg shadow-xl border border-gray-200 h-full md:sticky md:top-8 md:h-[calc(100vh-4rem)]">
                 
@@ -2006,24 +2001,20 @@
             annotationsData.transcriptData.forEach(segment => {
                 let segmentText = segment.text;
                 
-                // CRITICAL CHECK: ONLY process highlighting if the current speaker is the Technician.
+                
                 if (segment.speaker === "Technician") { 
                     
-                    // 1. Find and replace highlighted fragments within this segment's text
+                    
                     annotationsData.highlights.forEach(highlight => {
-                        // Check to ensure the highlight data itself is intended for the Technician (safety check)
                         if (highlight.speaker === segment.speaker) { 
-                            // Create the HTML for the highlight
                             const highlightHtml = `<span class="highlight-span" data-annotation-id="${highlight.id}">${highlight.fragment}</span>`;
                             
-                            // Use regex replacement for safety and global replacement within the segment text
                             const regex = new RegExp(escapeRegExp(highlight.fragment), 'g');
                             segmentText = segmentText.replace(regex, highlightHtml);
                         }
                     });
                 }
 
-                // 2. Build the full segment HTML
                 html += `
                     <div class="transcript-line">
                         <span class="speaker-${segment.speaker}">${segment.speaker}:</span> ${segmentText}
@@ -2032,16 +2023,14 @@
             });
 
             transcriptContentEl.innerHTML = html;
-            attachHighlightListeners(); // Attach listeners after rendering
+            attachHighlightListeners(); 
         }
 
         function escapeRegExp(string) {
             return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
         }
 
-        // --- EVENT HANDLERS ---
-        
-        // Function to display the annotation
+
         function showAnnotation(id, targetElement) {
             const data = annotationsMap[id];
             if (!data) return;
@@ -2051,34 +2040,31 @@
             annotationType.classList.remove('text-red-600', 'text-green-600', 'text-blue-600', 'text-orange-600');
             annotationType.classList.add(data.colorClass);
 
-            // 3. Toggle visibility
             defaultMessage.classList.add('hidden');
             annotationContent.classList.remove('hidden');
             
-            // 4. Activate sidebar visibility on mobile
             sidebar.classList.add('active');
 
-            // 5. Update active highlight styles
             document.querySelectorAll('.highlight-span').forEach(s => s.classList.remove('font-extrabold', 'shadow-md'));
             if (targetElement) {
                 targetElement.classList.add('font-extrabold', 'shadow-md');
             }
         }
 
-        // Function to reset the sidebar
+
         function hideAnnotation() {
-             // 1. Toggle visibility
+
             annotationContent.classList.add('hidden');
             defaultMessage.classList.remove('hidden');
             
-            // 2. Deactivate sidebar visibility on mobile
+
             sidebar.classList.remove('active');
             
-            // 3. Remove active highlight styles
+
             document.querySelectorAll('.highlight-span').forEach(s => s.classList.remove('font-extrabold', 'shadow-md'));
         }
 
-        // Attach event listeners to all dynamically created highlighted spans
+
         function attachHighlightListeners() {
             document.querySelectorAll('.highlight-span').forEach(span => {
                 span.addEventListener('click', (event) => {
@@ -2090,10 +2076,9 @@
             });
         }
 
-        // Add event listener to the close button (for mobile view)
         closeBtn.addEventListener('click', hideAnnotation);
 
-        // Initial rendering of the transcript
+
         window.onload = renderTranscript;
 
     </script>
